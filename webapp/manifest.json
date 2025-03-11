@@ -86,7 +86,7 @@
             "targets": {
                 "TargetMain": {
                     "id": "Main",
-                    "name": "SalesList"
+                    "name": "Main"
                 }
             }
         },
