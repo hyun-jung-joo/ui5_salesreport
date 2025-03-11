@@ -1,0 +1,16 @@
+<mvc:View
+    controllerName="sync.c22.salesreport.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <!-- SalesList.view.xml 에서 orders 리스트 구현 -->
+        <mvc:XMLView
+            id="idListView"
+            viewName="sync.c22.salesreport.view.SalesList"
+        />
+    </Page>
+</mvc:View>

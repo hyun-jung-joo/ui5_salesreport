@@ -1,0 +1,38 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+    <!-- sales 모델에서 하나씩 가져오는 List 구현 -->
+    <List
+        id="idList"
+        items="{sales>/Orders}"
+    >
+        <!-- items의 경로를 지정해서 그 안에서는 상대경로로 구현 -->
+        <items>
+            <!-- 
+                ObjectListItem 안에 관련 값들을 띄우고 
+                attibutes를 이용해서 부가 정보도 보이게 해준다. 
+            -->
+            <ObjectListItem
+                title="{sales>order_id}"
+                number="{
+                    parts : [ 'sales>amount', 'sales>currency' ], 
+                    type : 'sap.ui.model.type.Currency', 
+                    formatOptions : {
+                        showMeasure : false
+                    }
+                }"
+                numberUnit="{sales>currency}"
+            >
+                <attributes>
+                    <ObjectAttribute
+                        text="{sales>order_date} {sales>order_time}"
+                    />
+                    <ObjectAttribute
+                        text="{sales>product_name} x {sales>quantity}"
+                    />
+                </attributes>
+            </ObjectListItem>
+        </items>
+    </List>
+</mvc:View>
